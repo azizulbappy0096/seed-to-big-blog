@@ -23,15 +23,17 @@
 }
 
 /* title */
-.ck-content h1 {
+.ck-content h1, .ck-content h2, .ck-content h3, .ck-content p, .ck-content ul, .ck-content ol {
   color: #171a18;
   font-family: "Bentham", serif;
+}
+
+.ck-content h1 {
   font-size: 60px;
 }
 
 /* paragraph */
-.ck-content p {
-  color: #171a18;
+.ck-content p, .ck-content ul, .ck-content ol {
   font-size: 22px;
   font-family: "Bahnschrift", sans-serif;
 }

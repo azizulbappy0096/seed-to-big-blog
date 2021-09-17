@@ -12,7 +12,9 @@ function App() {
   return (
     <React.Fragment>
       {/* Header component goes here */}
-
+      <header className="text-end py-2 px-4">
+        <button className="btn btn-secondary"> Publish </button>
+      </header>
       <Main />
 
       {/* Footer component goes here */}

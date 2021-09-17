@@ -1,39 +1,38 @@
 import React, { useState } from "react";
 
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import { Editor } from "ckeditor5-custom-build/build/ckeditor";
+
 
 
 //
 const config = {
-  placeholder: "Start writing...",
+  placeholder: "Tell your story...",
   toolbar: [
     "heading",
+    "removeFormat",
     "|",
     "bold",
     "italic",
     "underline",
     "link",
+    "insertTable",
     "bulletedList",
     "numberedList",
     "|",
-    "findAndReplace",
     "alignment",
     "outdent",
     "indent",
-    "removeFormat",
     "|",
+    "findAndReplace",
     "fontSize",
     // "fontColor",
-    "fontFamily",
-    "fontBackgroundColor",
+    // "fontFamily",
+    // "fontBackgroundColor",
     "highlight",
     "|",
     "code",
     "codeBlock",
     "imageUpload",
     "blockQuote",
-    "insertTable",
     "|",
     "horizontalLine",
     "specialCharacters",
@@ -44,6 +43,9 @@ const config = {
     "undo",
     "redo",
   ],
+  title: {
+    placeholder: "Title"
+  },
   heading: {
     options: [
       { model: "paragraph", title: "Paragraph", class: "ck-heading_paragraph" },
@@ -98,11 +100,13 @@ const config = {
   },
   image: {
     toolbar: [
+      "toggleImageCaption",
       "imageTextAlternative",
       "imageStyle:inline",
       "imageStyle:block",
       "imageStyle:side",
       "linkImage",
+
     ],
   },
   table: {
@@ -114,13 +118,13 @@ const config = {
       "tableProperties",
     ],
   },
-  fontFamily: {
-    options: [
-      "default",
-      "Ubuntu, Arial, sans-serif",
-      "Ubuntu Mono, Courier New, Courier, monospace",
-    ],
-  },
+  // fontFamily: {
+  //   options: [
+  //     "default",
+  //     "Ubuntu, Arial, sans-serif",
+  //     "Ubuntu Mono, Courier New, Courier, monospace",
+  //   ],
+  // },
   simpleUpload: {
     // The URL that the images are uploaded to.
     uploadUrl: "http://localhost:2000/upload",
@@ -136,35 +140,5 @@ const config = {
 }
 };
 
-function EditorConfig() {
-  const [data, setData] = useState("")
 
-  const seperateTitle = (blog) => {
-    
-  }
-
-  return (
-    <CKEditor
-      editor={Editor}
-      config={config}
-      data={data}
-      onReady={(editor) => {
-        // You can store the "editor" and use when it is needed.
-        console.log("Editor is ready to use!", editor);
-      }}
-      onChange={(event, editor) => {
-        const Data = editor.getData();
-        setData(Data)
-        console.log({ event, editor, Data });
-      }}
-      onBlur={(event, editor) => {
-        console.log("Blur.", editor);
-      }}
-      onFocus={(event, editor) => {
-        console.log("Focus.", editor);
-      }}
-    />
-  );
-}
-
-export default EditorConfig;
+export default config;
