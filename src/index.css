@@ -1,5 +1,23 @@
-body {
+/* fonts start */
+@font-face {
+  font-family: "Bentham";
+  src: url("./Fonts/Bentham/Bentham-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bahnschrift";
+  src: url("./Fonts/Bahnschrift-Font-Family/BAHNSCHRIFT 2.TTF");
+}
+
+
+/* fonts end */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

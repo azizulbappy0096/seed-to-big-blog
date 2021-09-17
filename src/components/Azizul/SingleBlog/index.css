@@ -1,0 +1,81 @@
+.blog__featureImg {
+  max-height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* title section */
+.blog__profileImg {
+  height: 95px;
+  width: 95px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* contents section */
+.blog__quote {
+  font-size: 28px;
+  font-style: italic;
+}
+
+.blog__quote::before,
+.blog__quote::after {
+  content: "''";
+}
+
+.blog__devider {
+  height: 3px;
+  border-radius: 2px;
+  background: #cecece;
+  width: 40%;
+  margin: 0 auto;
+}
+
+/* share secion */
+.blog__shareIcon {
+  font-size: 48px;
+  cursor: pointer;
+  background-color: white;
+  padding: 6px;
+  border: 0.5px solid rgba(148, 146, 146, 0.096);
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 4px 6px 0px rgb(202 197 197 / 75%);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* rgb(202 197 197 / 75%) */
+
+.blog__shareIcon--pinterest {
+  color: #e60023;
+}
+
+.blog__shareIcon--facebook {
+  color: #4267b2;
+}
+.blog__shareIcon--twitter {
+  color: #1da1f2;
+}
+
+/* profile  */
+.blog__profile {
+  margin: 24px auto;
+  padding: 80px 0;
+  background-color: #f7f7f7;
+}
+
+.blog__profileButton {
+  background-color: transparent;
+  padding: 2px 24px;
+  border: 1px solid #8080807d;
+  border-radius: 4px;
+  transition: all 0.35s linear;
+}
+
+.blog__profileButton:hover {
+    color: white;
+    background-color: #8080807d;
+    
+}
