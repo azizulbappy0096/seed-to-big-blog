@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-function TitleSection() {
+function TitleSection({ title, author, views, previewImg }) {
   return (
     <div className="container mx-auto ">
       <div className="row align-items-center">
@@ -10,14 +10,13 @@ function TitleSection() {
             className="blog__profileImg"
             style={{
               backgroundImage:
-                "url(/tempImg/jose-alejandro-cuffia-k1LNP6dnyAE-unsplash.jpg)",
+                `url(${author?.profileImg})`,
             }}
           ></div>
         </Col>
         <Col md="9" xs="12">
           <h1 className="text-capitalize lh-base">
-            {" "}
-            Karen Miga Fills in the missing pieces of our Genome{" "}
+          {title}
           </h1>
           <div className="d-flex gap-4">
             <div className="text-capitalize text-secondary">
@@ -37,7 +36,7 @@ function TitleSection() {
                   d="M18 12H6"
                 />
               </svg>{" "}
-              <span> John dev </span>{" "}
+              <span> {author?.name} </span>{" "}
             </div>
             <div className="text-capitalize text-secondary">
               <svg
@@ -53,7 +52,7 @@ function TitleSection() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span> 1,245 Views </span>{" "}
+              <span> {views} Views </span>{" "}
             </div>
           </div>
         </Col>

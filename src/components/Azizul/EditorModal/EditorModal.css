@@ -1,0 +1,80 @@
+.editorModal {
+    color: #3F476F;
+}
+
+.editorModal__previewImg {
+    background: #FAFAFA;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px 24px;
+    text-align: center;
+    gap: 8px;
+}
+
+.editorModal__previewImg .plusIcon {
+    width: 40px;
+    color: gray;
+}
+
+.editorModal__inputs input {
+    color: #171a18;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ded9d9;
+    padding: 4px 8px;
+    margin: 4px auto;
+}
+
+.editorModal__inputs input:focus {
+    outline: none;
+}
+
+.editorModal__inputs input:nth-child(1) {
+    font-size: 24px;
+    font-family: "Bahnschrift", sans-serif;
+}
+
+.editorModal__inputs input:nth-child(2) {
+    font-size: 20px;
+    font-family: "Bentham", serif;
+}
+
+/* tags style */
+.editorModal__tag {
+    display: grid;
+    place-content: stretch;
+    min-height: 60px;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    background: #FAFAFA;
+}
+
+.editorModal__tag p {
+    margin: 0;
+}
+
+.editorModal__tag [contenteditable] p:empty::before,
+.editorModal__tag [contenteditable]:empty::before,
+.editorModal__tag [contenteditable] div p:empty::before
+ {
+  content: "Add a tag...";
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.editorModal__tag [contenteditable]:focus {
+  outline: none;
+}
+
+.modalEditor__publish {
+    border: none;
+    background-color: #1a8917;
+transition: all 0.15s linear;}
+
+.modalEditor__publish:hover {
+    background-color: #0f730c;
+}
