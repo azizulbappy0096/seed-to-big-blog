@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // components
-import Main from './components/Main';
+import Main from './components/Main/Main';
 
 function App() {
   return (

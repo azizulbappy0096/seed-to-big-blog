@@ -35,7 +35,8 @@ function InputTags({ tags, setTags }) {
           "px-2",
           "py-1",
           "bg-white",
-          "border"
+          "border",
+          "text-break"
         );
         div.setAttribute("contentEditable", false);
 

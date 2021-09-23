@@ -1,32 +1,51 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Col, Modal } from "react-bootstrap";
+
+// css
 import "./EditorModal.css";
+
+// components
 import InputTags from "./inputTags";
 
-function EditorModal() {
+function EditorModal({ title, preview, handleTitle }) {
   const imgRef = useRef(null);
 
   const [show, setShow] = useState(true);
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
   const [previewText, setPreviewText] = useState("");
   const [previewImg, setPreviewImg] = useState("");
   const [tags, setTags] = useState([]);
 
+  useEffect(() => {
+    setPreviewText(preview);
+  }, [show]);
+
   const handlePreviewImg = (e) => {
     e.preventDefault();
-    imgRef.current.click()
+    imgRef.current.click();
   };
 
   return (
-    <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
-      <Modal.Header closeButton className="border-0 p-5"></Modal.Header>
+    <Modal show={show} fullscreen={true}>
+      <Modal.Header className="border-0 p-5">
+        <button
+          className="editorModal-close btn-close"
+          onClick={() => setShow(false)}
+        ></button>
+      </Modal.Header>
       <Modal.Body className="d-flex align-items-center">
-        <div className="container">
-          <div className="editorModal row gap-2 gap-md-5">
+        <div className="editorModal container">
+          <div className=" row gap-2 gap-md-5">
             <Col xs="12" lg="6">
               <h5> Preview </h5>
               <div className="editorModal__previewImg">
-                <input hidden ref={imgRef} type="file" name="file" onChange={(e) => setPreviewImg(e.target.files[0])} />
+                <input
+                  hidden
+                  ref={imgRef}
+                  type="file"
+                  name="file"
+                  onChange={(e) => setPreviewImg(e.target.files[0])}
+                />
                 <button
                   className="bg-transparent border-0"
                   onClick={handlePreviewImg}
@@ -54,8 +73,18 @@ function EditorModal() {
                 </p>
               </div>
               <div className="editorModal__inputs my-4">
-                <input type="text" placeholder="Change or Write your title" />
-                <input type="text" placeholder="Preview text..." />
+                <input
+                  type="text"
+                  value={title}
+                  placeholder="Change or Write your title"
+                  onChange={(e) => handleTitle(e.target.value)}
+                />
+                <input
+                  type="text"
+                  value={previewText}
+                  placeholder="Preview text..."
+                  onChange={(e) => setPreviewText(e.target.value)}
+                />
                 <p className="mt-2 text-muted">
                   {" "}
                   <span className="fw-bold"> Note: </span> Changes here will

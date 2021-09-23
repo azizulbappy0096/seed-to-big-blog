@@ -1,10 +1,11 @@
 // modules
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Editor from "../Azizul/Editor";
+
 
 // components
 import SingleBlog from "../Azizul/SingleBlog";
+import Editor from "../Azizul/Editor";
 
 function Main() {
   return (

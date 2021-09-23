@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-
-
 
 
 //
@@ -44,7 +41,7 @@ const config = {
     "redo",
   ],
   title: {
-    placeholder: "Title"
+    placeholder: "Title",
   },
   heading: {
     options: [
@@ -106,7 +103,6 @@ const config = {
       "imageStyle:block",
       "imageStyle:side",
       "linkImage",
-
     ],
   },
   table: {
@@ -137,8 +133,7 @@ const config = {
     //     'X-CSRF-TOKEN': 'CSRF-Token',
     //     Authorization: 'Bearer <JSON Web Token>'
     // }
-}
+  },
 };
-
 
 export default config;
